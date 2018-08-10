@@ -2,6 +2,10 @@
 
 <?php include 'sidebar.php'; ?>
 
+<head>
+    <script src="https://cdn.ckeditor.com/4.10.0/standard/ckeditor.js"></script>
+</head>
+
 <!-- /. NAV SIDE  -->
 <div id="page-wrapper">
     <div id="page-inner">
@@ -54,13 +58,13 @@
             <div class="form-group col-md-12">
                 <div class="form-group col-md-6">
                     <label>Sayfa Adı </label>
-                    <input class="form-control" type="text" name="menu_ad" placeholder="Sayfa Adı Giriniz">
+                    <input class="form-control" type="text" name="sayfa_ad" placeholder="Sayfa Adı Giriniz">
                 </div> 
             </div>
             <div class="form-group col-md-12">
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-12">
                     <label>Sayfa İçerik </label>
-                    <input class="form-control" type="text" name="menu_link" value="http://">
+                    <textarea class="ckeditor" name="sayfa_icerik"></textarea>
                 </div> 
             </div>
 
@@ -73,9 +77,10 @@
             <div class="form-group col-md-12">
                 <div class="form-group col-md-6">
                     <label>Ana Sayfada Göster</label>
-                    <select class="form-control">
-                        <option>Hayır</option>
-                        <option>Evet</option>
+                    <select name="sayfa_anasayfa"class="form-control">
+
+                        <option value="0">Hayır</option>
+                        <option value="1">Evet</option>
 
                     </select>
                 </div>

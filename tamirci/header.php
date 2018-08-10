@@ -32,6 +32,7 @@ $ayarcek=mysql_fetch_assoc($ayarsor);
   <script src="js/tms-0.3.js"></script>
   <script src="js/tms_presets.js"></script>
   <script src="js/easyTooltip.js"></script>
+  
 <!--[if lt IE 9]>
 <script src="js/html5.js"></script>
 <link rel="stylesheet" href="css/ie.css" type="text/css" media="screen">
@@ -108,18 +109,18 @@ $ayarcek=mysql_fetch_assoc($ayarsor);
 
 
                 $slidersor=mysql_query("select * from slider order by slider_sira desc");
-               
+
 
                 while($slidercek=mysql_fetch_assoc($slidersor)) {?>
 
-                  
-                <li>
 
-                  <img src="nedmin/<?php echo $slidercek['slider_resimyol']; ?>" alt="<?php echo $slidercek['slider_ad']; ?>">
+                  <li>
 
-                </li>
-                
-<?php  }?>
+                    <img src="nedmin/<?php echo $slidercek['slider_resimyol']; ?>" alt="<?php echo $slidercek['slider_ad']; ?>">
+
+                  </li>
+
+                <?php  }?>
 
 
               </ul>

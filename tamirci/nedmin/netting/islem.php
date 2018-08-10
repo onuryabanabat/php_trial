@@ -226,5 +226,60 @@ if (isset($_POST['sliderguncelle']))
 	}
 }
 
+if (isset($_POST['sayfakaydet'])) {
+	
+
+	$zaman=date('Y-m-d H:i');
+
+	$sayfaekle=mysql_query(
+
+		"insert into sayfalar (sayfa_ad,sayfa_icerik,sayfa_sira,sayfa_anasayfa,sayfa_tarih) VALUES
+
+
+		('".$_POST['sayfa_ad']."',
+		'".$_POST['sayfa_icerik']."',
+		'".$_POST['sayfa_sira']."',
+		'".$_POST['sayfa_anasayfa']."',
+		'".$zaman."'
+		)");
+
+
+	if (mysql_affected_rows()) 
+	{
+
+		header("Location:../sayfalar.php?durum=ok");
+
+
+	}
+	else
+
+	{
+		header("Location:../sayfalar.php?durum=no");
+
+	}
+
+}
+
+
+
+if ($_GET['sayfasil']=="ok") {
+
+	$sayfasil=mysql_query("delete from sayfalar where sayfa_id='".$_GET['sayfa_id']."'");
+
+	if (mysql_affected_rows()) 
+	{
+
+		header('Location:../sayfalar.php?durum=ok');
+		# code...
+	}
+	else
+	{
+		header('Location:../sayfalar.php?durum=ok');
+	}
+
+
+}
+
+
 
 ?>

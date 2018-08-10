@@ -33,7 +33,7 @@
                     <a href="slider.php"><i class="fa fa-dashboard "></i>Slider</a>
                 </li>
                 <li>
-                    <a href="sayfa-ekle.php"><i class="fa fa-dashboard "></i>Sayfa Ekle</a>
+                    <a href="sayfalar.php"><i class="fa fa-dashboard "></i>Sayfalar</a>
                 </li>
             </ul>
         </div>
