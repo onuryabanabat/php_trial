@@ -46,87 +46,38 @@ $ayarcek=mysql_fetch_assoc($ayarsor);
         <div class="indent">
           <div class="row-top">
             <div class="wrapper">
-
-
-
               <img style="margin-top: 30px; margin-left: 30px;" src="<?php echo $ayarcek['ayar_logo'] ?>">
-
-
-              <strong class="support"><?php echo $ayarcek['ayar_telefon']; ?></strong> </div>
+              <strong class="support"><?php echo $ayarcek['ayar_telefon']; ?></strong> 
             </div>
+          </div>
 
+          <nav>
+            <ul class="menu">
+              <li><a class="active" href="index.php">Home</a></li>
+              <?php
+              $menusor=mysql_query("select * from menuler");
+              $menusay=mysql_num_rows($menusor);
 
+              $say=0;
 
-            <nav>
-              <ul class="menu">
+              while($menucek=mysql_fetch_assoc($menusor)) {$say++;?>
 
-                <li><a class="active" href="index.html">Home</a></li>
+                <li class="<?php
 
+                if($menusay==$say)
 
-                <?php
+                {
 
-
-                $menusor=mysql_query("select * from menuler");
-                $menusay=mysql_num_rows($menusor);
-
-                $say=0;
-
-                while($menucek=mysql_fetch_assoc($menusor)) {$say++;?>
-
-                  <li class="<?php
-                  
-                  if($menusay==$say)
-
-                  {
-
-                    echo "last";
-                  }
-
-                  ?>"><a href="<?php echo $menucek['menu_link'];?>" target="blank"><?php echo $menucek['menu_ad']?> </a></li>
-
-                  <?php
-
+                  echo "last";
                 }
 
-                ?>
-
-
-              </ul>
-            </nav>
-
-
-
-          </div>
-
-
-
-
-          <div class="wrapper">
-            <div class="slider">
-              <ul class="items">
-
+                ?>"><a href="<?php echo $menucek['menu_link'];?>" target="blank"><?php echo $menucek['menu_ad']?> </a></li>
                 <?php
+              }
+              ?>
+            </ul>
+          </nav>
+        </div>
 
 
-                $slidersor=mysql_query("select * from slider order by slider_sira desc");
-
-
-                while($slidercek=mysql_fetch_assoc($slidersor)) {?>
-
-
-                  <li>
-
-                    <img src="nedmin/<?php echo $slidercek['slider_resimyol']; ?>" alt="<?php echo $slidercek['slider_ad']; ?>">
-
-                  </li>
-
-                <?php  }?>
-
-
-              </ul>
-            </div>
-            <a class="prev">prev</a> <a class="next">next</a>
-            <div class="banner1-bg"></div>
-            <div class="banner-1"></div>
-          </div>
-        </header>
+      </header>

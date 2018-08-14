@@ -117,6 +117,32 @@ if (isset($_POST['menuduzenle'])) {
 }
 
 
+if (isset($_POST['sayfaduzenle'])) {
+	
+	$sayfa_id=$_POST['sayfa_id'];
+
+	$sayfakaydet=mysql_query("update sayfalar set 
+		sayfa_ad='".$_POST['sayfa_ad']."',
+		sayfa_icerik='".$_POST['sayfa_icerik']."',
+		sayfa_sira='".$_POST['sayfa_sira']."',
+		sayfa_anasayfa='".$_POST['sayfa_anasayfa']."'
+
+		where sayfa_id='$sayfa_id'");
+
+	if (mysql_affected_rows()) 
+	{
+		header("Location:../sayfa-duzenle.php?durum=ok&sayfa_id=$sayfa_id");
+	}
+	else
+	{
+		header("Location:../sayfa-duzenle.php?durum=no&sayfa_id=$sayfa_id");
+	}
+}
+
+
+
+
+
 
 if ($_GET['menusil']=="ok") {
 
